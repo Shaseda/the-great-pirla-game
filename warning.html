@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚠️ DANGER WARNING - The Great Pirla's Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial Black', Arial, sans-serif;
+            background: linear-gradient(135deg, #ff0000 0%, #8b0000 50%, #000000 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            overflow-x: hidden;
+            animation: danger-pulse 2s infinite;
+        }
+
+        @keyframes danger-pulse {
+            0% { background: linear-gradient(135deg, #ff0000 0%, #8b0000 50%, #000000 100%); }
+            50% { background: linear-gradient(135deg, #ff4500 0%, #ff0000 50%, #8b0000 100%); }
+            100% { background: linear-gradient(135deg, #ff0000 0%, #8b0000 50%, #000000 100%); }
+        }
+
+        .warning-container {
+            max-width: 800px;
+            width: 90%;
+            padding: 40px;
+            background: rgba(0,0,0,0.8);
+            border-radius: 20px;
+            border: 5px solid #ff0000;
+            box-shadow: 0 0 50px rgba(255,0,0,0.8);
+            text-align: center;
+            animation: warning-shake 0.5s infinite alternate;
+        }
+
+        @keyframes warning-shake {
+            0% { transform: translateX(-2px) rotate(-1deg); }
+            100% { transform: translateX(2px) rotate(1deg); }
+        }
+
+        .danger-icon {
+            font-size: 8rem;
+            color: #ff0000;
+            text-shadow: 0 0 30px rgba(255,0,0,0.8);
+            animation: icon-flash 1s infinite;
+            margin-bottom: 30px;
+        }
+
+        @keyframes icon-flash {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .warning-title {
+            font-size: 4rem;
+            color: #ff0000;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+            margin-bottom: 30px;
+            animation: title-blink 0.8s infinite;
+        }
+
+        @keyframes title-blink {
+            0% { color: #ff0000; text-shadow: 3px 3px 6px rgba(0,0,0,0.8); }
+            25% { color: #ffff00; text-shadow: 0 0 20px rgba(255,255,0,0.8); }
+            50% { color: #ffffff; text-shadow: 0 0 25px rgba(255,255,255,0.8); }
+            75% { color: #ff4500; text-shadow: 0 0 30px rgba(255,69,0,0.8); }
+            100% { color: #ff0000; text-shadow: 3px 3px 6px rgba(0,0,0,0.8); }
+        }
+
+        .warning-text {
+            font-size: 1.8rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .warning-list {
+            text-align: left;
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: #ffff00;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .warning-list li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .warning-list li:before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            animation: warning-icon-pulse 1.5s infinite;
+        }
+
+        @keyframes warning-icon-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .disclaimer {
+            font-size: 1.2rem;
+            color: #ff6666;
+            font-style: italic;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255,0,0,0.2);
+            border-radius: 10px;
+            border: 2px solid rgba(255,0,0,0.5);
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #ff0000, #8b0000);
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 3px solid #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+            animation: button-glow 2s infinite alternate;
+        }
+
+        @keyframes button-glow {
+            0% { box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+            100% { box-shadow: 0 6px 25px rgba(255,0,0,0.8); }
+        }
+
+        .back-button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #ff4500, #ff0000);
+            box-shadow: 0 8px 30px rgba(255,0,0,0.9);
+        }
+
+        .skull-decoration {
+            font-size: 3rem;
+            opacity: 0.3;
+            position: fixed;
+            animation: float 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .skull-1 { top: 10%; left: 10%; animation-delay: 0s; }
+        .skull-2 { top: 20%; right: 15%; animation-delay: 1s; }
+        .skull-3 { bottom: 15%; left: 20%; animation-delay: 2s; }
+        .skull-4 { bottom: 25%; right: 10%; animation-delay: 1.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @media (max-width: 768px) {
+            .warning-container {
+                padding: 20px;
+                margin: 20px;
+            }
+            
+            .danger-icon {
+                font-size: 5rem;
+            }
+            
+            .warning-title {
+                font-size: 2.5rem;
+            }
+            
+            .warning-text {
+                font-size: 1.4rem;
+            }
+            
+            .warning-list {
+                font-size: 1.2rem;
+            }
+            
+            .disclaimer {
+                font-size: 1rem;
+            }
+            
+            .back-button {
+                font-size: 1.2rem;
+                padding: 12px 24px;
+            }
+            
+            .skull-decoration {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating skull decorations -->
+    <div class="skull-decoration skull-1">💀</div>
+    <div class="skull-decoration skull-2">☠️</div>
+    <div class="skull-decoration skull-3">💀</div>
+    <div class="skull-decoration skull-4">☠️</div>
+
+    <div class="warning-container">
+        <div class="danger-icon">⚠️</div>
+        
+        <h1 class="warning-title">DANGER!</h1>
+        
+        <div class="warning-text">
+            <strong>READ BEFORE ENTER</strong><br>
+            You are about to experience "The Great Pirla's Game" - an interactive chaos simulator that may cause:
+        </div>
+        
+        <ul class="warning-list">
+            <li><strong>Uncontrolled Laughter:</strong> The absurdity level is dangerously high</li>
+            <li><strong>Pixel Addiction:</strong> You may become obsessed with clicking bouncing rectangles</li>
+            <li><strong>Chaos Syndrome:</strong> Your perception of order may be permanently altered</li>
+            <li><strong>Score Confusion:</strong> Numbers may start behaving in unexpected ways</li>
+            <li><strong>Emoji Overload:</strong> Excessive exposure to animated symbols</li>
+            <li><strong>Reality Distortion:</strong> The line between game and life may blur</li>
+            <li><strong>Titillation Overdose:</strong> Extreme levels of entertainment satisfaction</li>
+        </ul>
+        
+        <div class="disclaimer">
+            <strong>DISCLAIMER:</strong> This game contains intentional chaos, unpredictable scoring systems, 
+            bouncing characters with feelings, and may cause spontaneous outbursts of "VERY VERY VERY TITILLATING!" 
+            The developers are not responsible for any existential crises, uncontrollable giggling, 
+            or sudden urges to click on everything that moves.
+        </div>
+        
+        <div class="warning-text">
+            <strong>⚡ SPECIAL WARNING:</strong><br>
+            Double-clicking the bouncing character activates <strong>UNCONTROLLED CHAOS MODE</strong> 
+            which may result in temporary loss of sanity, doubled movement speeds, and the appearance 
+            of the legendary message: "ENTROPY OR CHAOS? BETTER BOTH!"
+        </div>
+        
+        <a href="javascript:window.close()" class="back-button">
+            I UNDERSTAND THE RISKS - CLOSE THIS WARNING
+        </a>
+    </div>
+
+    <script>
+        // Add some interactive chaos to the warning page
+        document.addEventListener('click', function(e) {
+            // Create random floating emojis on click
+            const emojis = ['💥', '⚡', '🔥', '💀', '☠️', '⚠️', '🎯', '🌪️'];
+            const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            const floatingEmoji = document.createElement('div');
+            floatingEmoji.textContent = emoji;
+            floatingEmoji.style.position = 'fixed';
+            floatingEmoji.style.left = e.clientX + 'px';
+            floatingEmoji.style.top = e.clientY + 'px';
+            floatingEmoji.style.fontSize = '2rem';
+            floatingEmoji.style.pointerEvents = 'none';
+            floatingEmoji.style.zIndex = '9999';
+            floatingEmoji.style.animation = 'scoreFloat 2s ease-out forwards';
+            
+            document.body.appendChild(floatingEmoji);
+            
+            setTimeout(() => {
+                if (floatingEmoji.parentNode) {
+                    floatingEmoji.parentNode.removeChild(floatingEmoji);
+                }
+            }, 2000);
+        });
+
+        // Prevent the page from being closed accidentally
+        window.addEventListener('beforeunload', function(e) {
+            e.preventDefault();
+            e.returnValue = 'Are you sure you want to leave? The chaos awaits!';
+        });
+    </script>
+</body>
+</html>
